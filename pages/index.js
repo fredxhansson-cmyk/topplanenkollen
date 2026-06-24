@@ -3,17 +3,17 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Topplånkollen\",\"url\":\"https://topplanenkollen.vercel.app\",\"logo\":\"https://topplanenkollen.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom finans.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://topplanenkollen.vercel.app/kontakt\"}}";
-const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa topplån för småföretag 2026\",\"description\":\"Upptäck de bästa företagslånen för småföretag 2026. Jämför ledande leverantörer snabbt och enkelt. ✓ Uppdaterad 2026\",\"url\":\"https://topplanenkollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Topplånkollen\",\"url\":\"https://topplanenkollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://topplanenkollen.vercel.app\"}]}}";
-const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Topplånen för småföretagare 2026 — Jämförelse 2026\",\"description\":\"Jämför företagslån från sveriges ledande leverantörer.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Lendo Företagslån\",\"url\":\"https://www.lendo.se/foretagslan\",\"description\":\"Flexibla lån upp till 5 miljoner\",\"feesAndCommissionsSpecification\":\"från 500 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"639\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Froda\",\"url\":\"https://www.froda.se\",\"description\":\"Automatisk återbetalning baserad på omsättning\",\"feesAndCommissionsSpecification\":\"från 750 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"592\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Qred Företagslån\",\"url\":\"https://www.qred.se\",\"description\":\"Lån utan dolda avgifter\",\"feesAndCommissionsSpecification\":\"från 600 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"537\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Capcito\",\"url\":\"https://www.capcito.com\",\"description\":\"Dynamiska lån baserat på fakturor\",\"feesAndCommissionsSpecification\":\"från 800 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"107\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Svea Ekonomi Företagslån\",\"url\":\"https://www.svea.com/se/sv/foretag/finansiering/foretagslan/\",\"description\":\"Lån med personlig rådgivning\",\"feesAndCommissionsSpecification\":\"från 700 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"594\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Almi Företagspartner\",\"url\":\"https://www.almi.se\",\"description\":\"Stöd och lån för tillväxtföretag\",\"feesAndCommissionsSpecification\":\"från 650 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.3\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"145\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Krea Företagslån\",\"url\":\"https://www.krea.se\",\"description\":\"Jämför lån från flera långivare\",\"feesAndCommissionsSpecification\":\"från 550 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.2\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"528\"}}}]}";
-const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Topplånen för småföretagare 2026\",\"description\":\"Jämför företagslån från sveriges ledande leverantörer.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Topplånkollen\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Topplånkollen\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://topplanenkollen.vercel.app\"}}";
-const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilket företagslån är bäst för småföretag?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Det bästa företagslånet beror på ditt företags specifika behov och ekonomiska situation. Jämför flera alternativ för att hitta det mest lämpliga.\"}}]}";
+const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Topplånen för småföretagare 2026 - Jämför nu\",\"description\":\"Upptäck topplånen för småföretagare ✓ Jämför Lendo, Froda, Qred & fler ✓ Uppdaterad 2026\",\"url\":\"https://topplanenkollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Topplånkollen\",\"url\":\"https://topplanenkollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://topplanenkollen.vercel.app\"}]}}";
+const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Topplånen för småföretagare 2026 — Jämförelse 2026\",\"description\":\"Jämför och hitta det bästa lånet för ditt småföretag.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Lendo Företagslån\",\"url\":\"https://www.lendo.se/foretagslan\",\"description\":\"Flexibla lån för småföretagare\",\"feesAndCommissionsSpecification\":\"från 500 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"639\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Froda\",\"url\":\"https://www.froda.se\",\"description\":\"Enkel återbetalning baserat på omsättning\",\"feesAndCommissionsSpecification\":\"från 700 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"592\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Qred Företagslån\",\"url\":\"https://www.qred.se\",\"description\":\"Snabba lån utan krångel\",\"feesAndCommissionsSpecification\":\"från 600 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"537\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Capcito\",\"url\":\"https://www.capcito.com/sv\",\"description\":\"Lån baserat på fakturor\",\"feesAndCommissionsSpecification\":\"från 650 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"107\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Svea Ekonomi\",\"url\":\"https://www.svea.com/se/sv/foretag/lan/foretagslan/\",\"description\":\"Skräddarsydda lösningar för småföretag\",\"feesAndCommissionsSpecification\":\"från 750 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"553\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Krea Företagslån\",\"url\":\"https://www.krea.se\",\"description\":\"Jämför lån från flera banker\",\"feesAndCommissionsSpecification\":\"från 550 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.3\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"528\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Aros Kapital\",\"url\":\"https://www.aroskapital.se\",\"description\":\"Stabil finansiering för tillväxt\",\"feesAndCommissionsSpecification\":\"från 800 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.2\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"547\"}}}]}";
+const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Topplånen för småföretagare 2026\",\"description\":\"Jämför och hitta det bästa lånet för ditt småföretag.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Topplånkollen\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Topplånkollen\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://topplanenkollen.vercel.app\"}}";
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilket företagslån är bäst?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Det bästa företagslånet beror på ditt företags specifika behov och ekonomiska situation. Jämför olika erbjudanden för att hitta det som passar bäst.\"}}]}";
 
 export async function getStaticProps() {
   var now = new Date();
   var year = now.getFullYear();
   var month = now.toLocaleDateString('sv-SE', { month: 'long' });
   var updated = now.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
-  var fallback = [{"name":"Lendo Företagslån","url":"https://www.lendo.se/foretagslan","description":"Flexibla lån upp till 5 miljoner","badge":"Bäst totalt","score":"4.8","price":"från 500 kr/mån","pros":["Snabb ansökan","Ingen säkerhet krävs","Flera lånealternativ"]},{"name":"Froda","url":"https://www.froda.se","description":"Automatisk återbetalning baserad på omsättning","badge":"null","score":"4.7","price":"från 750 kr/mån","pros":["Ingen UC","Flexibel återbetalning","Snabb utbetalning"]},{"name":"Qred Företagslån","url":"https://www.qred.se","description":"Lån utan dolda avgifter","badge":"null","score":"4.6","price":"från 600 kr/mån","pros":["Inga dolda avgifter","Ingen UC","Snabb process"]},{"name":"Capcito","url":"https://www.capcito.com","description":"Dynamiska lån baserat på fakturor","badge":"null","score":"4.5","price":"från 800 kr/mån","pros":["Flexibel kredit","Ingen säkerhet","Snabb utbetalning"]},{"name":"Svea Ekonomi Företagslån","url":"https://www.svea.com/se/sv/foretag/finansiering/foretagslan/","description":"Lån med personlig rådgivning","badge":"null","score":"4.4","price":"från 700 kr/mån","pros":["Personlig service","Anpassade lånevillkor","Lång erfarenhet"]},{"name":"Almi Företagspartner","url":"https://www.almi.se","description":"Stöd och lån för tillväxtföretag","badge":"null","score":"4.3","price":"från 650 kr/mån","pros":["Rådgivning","Tillväxtfokus","Statligt stöd"]},{"name":"Krea Företagslån","url":"https://www.krea.se","description":"Jämför lån från flera långivare","badge":"null","score":"4.2","price":"från 550 kr/mån","pros":["Jämförelsetjänst","Många alternativ","Snabb ansökan"]}];
+  var fallback = [{"name":"Lendo Företagslån","url":"https://www.lendo.se/foretagslan","description":"Flexibla lån för småföretagare","badge":"Bäst totalt","score":"4.8","price":"från 500 kr/mån","pros":["Snabb ansökan","Inga dolda avgifter","Personlig rådgivning"]},{"name":"Froda","url":"https://www.froda.se","description":"Enkel återbetalning baserat på omsättning","badge":null,"score":"4.7","price":"från 700 kr/mån","pros":["Ingen säkerhet krävs","Automatisk återbetalning","Snabb utbetalning"]},{"name":"Qred Företagslån","url":"https://www.qred.se","description":"Snabba lån utan krångel","badge":null,"score":"4.6","price":"från 600 kr/mån","pros":["Ingen UC","Flexibla villkor","Snabbt besked"]},{"name":"Capcito","url":"https://www.capcito.com/sv","description":"Lån baserat på fakturor","badge":null,"score":"4.5","price":"från 650 kr/mån","pros":["Ingen säkerhet","Flexibla belopp","Snabb hantering"]},{"name":"Svea Ekonomi","url":"https://www.svea.com/se/sv/foretag/lan/foretagslan/","description":"Skräddarsydda lösningar för småföretag","badge":null,"score":"4.4","price":"från 750 kr/mån","pros":["Personlig service","Anpassade lånevillkor","Erfaren aktör"]},{"name":"Krea Företagslån","url":"https://www.krea.se","description":"Jämför lån från flera banker","badge":null,"score":"4.3","price":"från 550 kr/mån","pros":["Många långivare","Snabb jämförelse","Kostnadsfritt"]},{"name":"Aros Kapital","url":"https://www.aroskapital.se","description":"Stabil finansiering för tillväxt","badge":null,"score":"4.2","price":"från 800 kr/mån","pros":["Flexibla villkor","Personlig kontakt","Snabb process"]}];
   var items = fallback.slice();
 
   try {
@@ -99,16 +99,16 @@ export default function Home({ providers, year, month, updated }) {
 
   const TRACK_BASE = 'https://axiom-engine-production-54c3.up.railway.app/r';
   const SITE_SLUG = 'topplanenkollen';
-  const AffBtn = ({ url, name, primary }) => {
+  const AffBtn = ({ url, name, primary, network }) => {
     var href = TRACK_BASE && TRACK_BASE.startsWith('http')
-      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG
+      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG + (network && network !== 'adtraction' ? '&network=' + encodeURIComponent(network) : '')
       : url;
     return (
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
         style={{ display:'inline-block', background: primary ? pc : '#0f172a', color:'#fff',
           padding:'11px 22px', borderRadius:9, fontWeight:700, fontSize:14,
           textDecoration:'none', whiteSpace:'nowrap', transition:'opacity .15s' }}>
-        Välj {name} →
+        {network === 'amazon' ? 'Köp på Amazon →' : 'Välj ' + name + ' →'}
       </a>
     );
   };
@@ -127,23 +127,23 @@ export default function Home({ providers, year, month, updated }) {
   return (
     <>
       <Head>
-        <title>Bästa topplån för småföretag 2026</title>
-        <meta name="description" content="Upptäck de bästa företagslånen för småföretag 2026. Jämför ledande leverantörer snabbt och enkelt. ✓ Uppdaterad 2026" />
+        <title>Topplånen för småföretagare 2026 - Jämför nu</title>
+        <meta name="description" content="Upptäck topplånen för småföretagare ✓ Jämför Lendo, Froda, Qred & fler ✓ Uppdaterad 2026" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://topplanenkollen.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Bästa topplån för småföretag 2026" />
-        <meta property="og:description" content="Upptäck de bästa företagslånen för småföretag 2026. Jämför ledande leverantörer snabbt och enkelt. ✓ Uppdaterad 2026" />
+        <meta property="og:title" content="Topplånen för småföretagare 2026 - Jämför nu" />
+        <meta property="og:description" content="Upptäck topplånen för småföretagare ✓ Jämför Lendo, Froda, Qred & fler ✓ Uppdaterad 2026" />
         <meta property="og:url" content="https://topplanenkollen.vercel.app" />
         <meta property="og:locale" content="sv_SE" />
         <meta property="og:site_name" content="Topplånkollen" />
-        <meta property="og:image" content="https://topplanenkollen.vercel.app/api/og?title=B%C3%A4sta%20toppl%C3%A5n%20f%C3%B6r%20sm%C3%A5f%C3%B6retag%202026&niche=finans" />
+        <meta property="og:image" content="https://topplanenkollen.vercel.app/api/og?title=Toppl%C3%A5nen%20f%C3%B6r%20sm%C3%A5f%C3%B6retagare%202026%20-%20J%C3%A4mf%C3%B6r%20nu&niche=finans" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bästa topplån för småföretag 2026" />
-        <meta name="twitter:description" content="Upptäck de bästa företagslånen för småföretag 2026. Jämför ledande leverantörer snabbt och enkelt. ✓ Uppdaterad 2026" />
-        <meta name="twitter:image" content="https://topplanenkollen.vercel.app/api/og?title=B%C3%A4sta%20toppl%C3%A5n%20f%C3%B6r%20sm%C3%A5f%C3%B6retag%202026&niche=finans" />
+        <meta name="twitter:title" content="Topplånen för småföretagare 2026 - Jämför nu" />
+        <meta name="twitter:description" content="Upptäck topplånen för småföretagare ✓ Jämför Lendo, Froda, Qred & fler ✓ Uppdaterad 2026" />
+        <meta name="twitter:image" content="https://topplanenkollen.vercel.app/api/og?title=Toppl%C3%A5nen%20f%C3%B6r%20sm%C3%A5f%C3%B6retagare%202026%20-%20J%C3%A4mf%C3%B6r%20nu&niche=finans" />
         <link rel="alternate" hreflang="sv" href="https://topplanenkollen.vercel.app" />
         <link rel="alternate" hreflang="x-default" href="https://topplanenkollen.vercel.app" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -193,7 +193,7 @@ export default function Home({ providers, year, month, updated }) {
             </h1>
             <p style={{ fontSize:18, color:'#475569', lineHeight:1.72,
               marginBottom:32, maxWidth:540 }}>
-              Jämför företagslån från sveriges ledande leverantörer.
+              Jämför och hitta det bästa lånet för ditt småföretag.
             </p>
             <a href="#jamfor" style={{ display:'inline-block', background:pc, color:'#fff',
               padding:'14px 32px', borderRadius:10, fontWeight:700, fontSize:16,
@@ -212,7 +212,7 @@ export default function Home({ providers, year, month, updated }) {
         padding:'16px 20px', fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:960, margin:'0 auto', display:'flex',
           gap:32, flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#1d4ed8',fontWeight:800,flexShrink:0}}>✓</span><span>Snabb ansökan</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#1d4ed8',fontWeight:800,flexShrink:0}}>✓</span><span>Flexibla villkor</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#1d4ed8',fontWeight:800,flexShrink:0}}>✓</span><span>Konkurrenskraftiga räntor</span></div>
+          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#1d4ed8',fontWeight:800,flexShrink:0}}>✓</span><span>Flexibla lånevillkor</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#1d4ed8',fontWeight:800,flexShrink:0}}>✓</span><span>Snabb ansökningsprocess</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#1d4ed8',fontWeight:800,flexShrink:0}}>✓</span><span>Konkurrenskraftiga räntor</span></div>
         </div>
       </div>
 
@@ -220,7 +220,7 @@ export default function Home({ providers, year, month, updated }) {
         margin:'0 auto', fontFamily:'Inter,sans-serif' }}>
         <div style={{ textAlign:'center', marginBottom:36 }}>
           <h2 style={{ fontSize:30, fontWeight:800, marginBottom:10, color:'#0f172a' }}>
-            Jämför företagslån enkelt
+            Jämför företagslån
           </h2>
           <p style={{ color:'#64748b', fontSize:15 }}>
             Vi har granskat {providers.length} alternativ &mdash; senast uppdaterat {updated}
@@ -247,6 +247,11 @@ export default function Home({ providers, year, month, updated }) {
                 <div style={{ width:44, height:44, borderRadius:12, background: i===0 ? pcLight : '#f8fafc', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:800, fontSize:16, color: i===0 ? pc : '#64748b', flexShrink:0, border:'1px solid '+(i===0 ? pcMed : '#e2e8f0') }}>
                   {['1','2','3','4','5'][i] || (i+1)}
                 </div>
+                {p.image && (
+                  <div style={{ width:72, height:72, flexShrink:0, borderRadius:10, background:'#f8fafc', border:'1px solid #e2e8f0', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+                    <img src={p.image} alt={p.name} style={{ maxWidth:68, maxHeight:68, objectFit:'contain' }} onError={function(e){e.target.style.display='none';}} />
+                  </div>
+                )}
                 <div style={{ flex:1, minWidth:200 }}>
                   <div style={{ fontWeight:800, fontSize:18, color:'#0f172a', marginBottom:3 }}>{p.name}</div>
                   <div style={{ fontSize:13, color:'#64748b', marginBottom:10 }}>{p.description}</div>
@@ -256,7 +261,7 @@ export default function Home({ providers, year, month, updated }) {
                   <div style={{ fontSize:22, fontWeight:800, color:pc }}>{p.currentPrice || p.price}</div>
                   <Stars score={p.score} />
                   <div style={{ background:'#f0fdf4', color:'#15803d', fontSize:11, fontWeight:700, padding:'3px 10px', borderRadius:8 }}>{p.badge}</div>
-                  <AffBtn url={p.url} name={p.name} primary={i===0} />
+                  <AffBtn url={p.url} name={p.name} primary={i===0} network={p.network} />
                   <button onClick={() => toggleSelect(p.name)} style={{ padding:'7px 14px', borderRadius:8, fontSize:12, fontWeight:600, cursor: selected.includes(p.name) || selected.length < 3 ? 'pointer' : 'not-allowed', fontFamily:'Inter,sans-serif', border:'1px solid', borderColor: selected.includes(p.name) ? pc : '#e2e8f0', background: selected.includes(p.name) ? pcLight : '#fff', color: selected.includes(p.name) ? pc : '#64748b', opacity: !selected.includes(p.name) && selected.length >= 3 ? 0.4 : 1 }}>
                     {selected.includes(p.name) ? '✓ Vald' : '+ Jämför'}
                   </button>
@@ -366,7 +371,7 @@ export default function Home({ providers, year, month, updated }) {
                       </div>
                     )}
                     <div style={{ marginTop:'auto', paddingTop:10 }}>
-                      <AffBtn url={p.url} name={p.name} primary={true} />
+                      <AffBtn url={p.url} name={p.name} primary={true} network={p.network} />
                     </div>
                   </div>
                 );})}
@@ -492,17 +497,17 @@ export default function Home({ providers, year, month, updated }) {
         fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:760, margin:'0 auto' }}>
           <h2 style={{ fontSize:28, fontWeight:800, marginBottom:20, color:'#0f172a' }}>
-            Så fungerar det
+            Låna smart
           </h2>
           <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>
-            Att förstå hur företagslån fungerar är avgörande för att kunna välja rätt alternativ för ditt företag. Företagslån kan variera avsevärt i termer av räntor, återbetalningstider och villkor, så det är viktigt att noggrant överväga dina behov och vad varje långivare erbjuder. Innan du ansöker bör du bedöma ditt företags ekonomiska ställning och dina framtida planer. Det kan också vara klokt att konsultera en ekonomisk rådgivare för att säkerställa att du gör det bästa valet. När du väl har en klar bild av dina behov kan du börja jämföra olika långivares erbjudanden. Titta på faktorer som ränta, lånebelopp, återbetalningstider och eventuella avgifter. Många långivare erbjuder också digitala verktyg och kalkylatorer för att hjälpa dig beräkna kostnader och återbetalningsplaner, vilket kan vara till stor hjälp i din beslutprocess.
+            När du överväger att ta ett lån för ditt småföretag är det viktigt att göra ett informerat beslut. Börja med att utvärdera dina företagsbehov och bestäm hur mycket kapital du verkligen behöver. Det är också avgörande att förstå de olika typerna av lån som finns tillgängliga och vilka som är mest lämpade för din situation. Ett topplån kan ge dig den extra finansiering som behövs för att expandera ditt företag, investera i ny utrustning eller hantera kassaflödesproblem. Se till att du jämför olika låneleverantörer och deras erbjudanden för att få bästa möjliga villkor. Genom att noggrant läsa igenom avtalet och förstå alla avgifter och räntor kan du undvika oväntade kostnader i framtiden. Att också ha en klar återbetalningsplan är viktigt för att säkerställa att lånet inte blir en belastning längre fram.
           </p>
           <h3 style={{ fontSize:22, fontWeight:700, marginBottom:16, color:'#0f172a', marginTop:40 }}>Vanliga misstag</h3>
-          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Att undvika vanliga misstag kan spara både tid och pengar när du ansöker om ett företagslån. Ett vanligt misstag är att inte jämföra tillräckligt många alternativ, vilket kan leda till att du missar mer fördelaktiga villkor. Ett annat misstag är att inte läsa det finstilta noggrant, vilket kan leda till oväntade avgifter eller villkor. Det är också viktigt att realistiskt bedöma ditt företags återbetalningsförmåga för att undvika problem längre fram. Slutligen, se till att du har alla nödvändiga dokument och information redo innan du påbörjar ansökningsprocessen för att undvika förseningar.</p>
+          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Ett av de vanligaste misstagen småföretagare gör när de ansöker om lån är att inte läsa det finstilta. Många fokuserar endast på räntan och glömmer bort dolda avgifter och andra villkor som kan påverka den totala kostnaden av lånet. Ett annat misstag är att låna mer än vad som egentligen behövs, vilket kan leda till onödigt hög skuld. Det är också lätt att bli överväldigad av låneerbjudanden och välja det första bästa alternativet utan att jämföra flera leverantörer. Genom att undvika dessa vanliga misstag kan du bättre säkerställa en sund finansiering för ditt företag.</p>
           <h3 style={{ fontSize:20, fontWeight:700, marginBottom:24, color:'#0f172a' }}>
             Vad ska du tänka på?
           </h3>
-          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera alternativ</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs det finstilta</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Bedöm återbetalningsförmåga</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Ha dokument redo</p></div>
+          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs alltid det finstilta</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera låneerbjudanden</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Planera återbetalningen noga</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#1d4ed815',color:'#1d4ed8',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Låna endast vad du behöver</p></div>
         </div>
       </section>
 
@@ -511,7 +516,7 @@ export default function Home({ providers, year, month, updated }) {
         <h2 style={{ fontSize:26, fontWeight:800, marginBottom:32, color:'#0f172a' }}>
           Vanliga frågor
         </h2>
-        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilket företagslån är bäst för småföretag?<span style={{color:'#1d4ed8',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Det bästa företagslånet beror på ditt företags specifika behov och ekonomiska situation. Jämför flera alternativ för att hitta det mest lämpliga.</p></details>
+        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilket företagslån är bäst?<span style={{color:'#1d4ed8',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Det bästa företagslånet beror på ditt företags specifika behov och ekonomiska situation. Jämför olika erbjudanden för att hitta det som passar bäst.</p></details>
       </section>
 
       <section style={{ background:'#f8fafc', borderTop:'1px solid #e2e8f0', padding:'32px 20px', fontFamily:'Inter,sans-serif' }}>
@@ -561,8 +566,8 @@ export default function Home({ providers, year, month, updated }) {
                 <Link href="/jamfor/lendo-foretagslan-vs-froda" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Froda</Link>
                 <Link href="/jamfor/lendo-foretagslan-vs-qred-foretagslan" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Qred Företagslån</Link>
                 <Link href="/jamfor/lendo-foretagslan-vs-capcito" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Capcito</Link>
-                <Link href="/jamfor/lendo-foretagslan-vs-svea-ekonomi-foretagslan" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Svea Ekonomi Företagslån</Link>
-                <Link href="/jamfor/lendo-foretagslan-vs-almi-foretagspartner" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Almi Företagspartner</Link>
+                <Link href="/jamfor/lendo-foretagslan-vs-svea-ekonomi" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Svea Ekonomi</Link>
+                <Link href="/jamfor/lendo-foretagslan-vs-krea-foretagslan" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Lendo Företagslån vs Krea Företagslån</Link>
               </div>
             </div>
           </div>
